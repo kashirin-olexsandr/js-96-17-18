@@ -73,4 +73,39 @@ function findLongestWord(string) {
     return longestWord;
 }
 
-console.log(findLongestWord("Nunc sed turpis a felissgsgfgs in nunc fringilla"));
+console.log(findLongestWord("Nunc sed turpis a felissgsgfgs in nunc fringill"))
+
+//Напишіть функції для роботи з масивом
+//add(name) додає курс до кінця колекції
+//removeCourse(name) видаляє курс із колекції
+//updateCourse(oldName, newName) змінює ім'я на нове
+
+const obj ={
+    cources: [],
+    add(name){
+        this.cources.push(name)
+    },
+    removeCourse(name){
+        let index = this.cources.indexOf(name)
+        if(index !== -1){
+            this.cources.splice(index, 1)
+        }
+    },
+    updateCourse(oldName, newName){
+        for(let i = 0; i <this.cources.length; i+=1){
+            if(this.cources[i] === oldName){
+                this.cources[i] = newName;
+            };
+        };
+    },
+};
+
+obj.add("html");
+obj.add("js");
+obj.add("css");
+console.log(obj.cources);
+obj.removeCourse("html");
+console.log(obj.cources);
+obj.updateCourse("js", "react");
+console.log(obj.cources);
+
