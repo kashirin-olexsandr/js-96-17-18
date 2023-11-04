@@ -34,5 +34,4 @@ function findSmallerNumber(numbers) {
     }
     return min;
 }
-
 console.log(findSmallerNumber([12, 5, 35, 56, 3, 24, 7, 80, 12]))
