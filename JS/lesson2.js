@@ -41,15 +41,36 @@
 //аргументів і повертає їхнє середнє значення.
 //Додати перевірку, що аргументи це числа.
 
-function caclculateAverage() {
-  let sumNamber = 0;
-  let totalNam = 0;
-  for (const i of arguments) {
-    if (typeof i === "number") {
-      sumNamber += i;
-      totalNam += 1;
+// function caclculateAverage() {
+//   let sumNamber = 0;
+//   let totalNam = 0;
+//   for (const i of arguments) {
+//     if (typeof i === "number") {
+//       sumNamber += i;
+//       totalNam += 1;
+//     }
+//   }
+//   return sumNamber / totalNam;
+// }
+// console.log(caclculateAverage(1, 2, 3, "5", 10));
+
+
+//Напиши функцію findLongestWord(string)
+//яка приймає довільний рядок
+//що складається лише з розділених слів
+//пробілом (параметр string)
+//і повертає найдовше слово у цьому рядку
+// "Nunc sed turpis a felis in nunc fringilla"
+
+function findLongestWord(string) {
+    const stringSplit = string.split(" ");
+    let longestWord = stringSplit[0];
+    for (const word of stringSplit) {
+        if (word.length > longestWord.length) {
+            longestWord = word;
+        }
     }
-  }
-  return sumNamber / totalNam;
+    return longestWord;
 }
-console.log(caclculateAverage(1, 2, 3, "5", 10));
+
+console.log(findLongestWord("Nunc sed turpis a felissgsgfgs in nunc fringilla"));
