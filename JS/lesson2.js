@@ -25,13 +25,31 @@
 //Додай перевірку що функція отримує масив
 // const numbers = [12, 5, 35, 56, 3, 24, 7, 80, 12];
 
-function findSmallerNumber(numbers) {
-    let min = numbers[0];
-    for (let number of numbers) {
-        if (number < min) {
-            min = number;
-        }
+// function findSmallerNumber(numbers) {
+//     let min = numbers[0];
+//     for (let number of numbers) {
+//         if (number < min) {
+//             min = number;
+//         }
+//     }
+//     return min;
+// }
+// console.log(findSmallerNumber([12, 5, 35, 56, 3, 24, 7, 80, 12]))
+
+//Напишіть функцію caclculateAverage()
+//яка приймає довільну кількість
+//аргументів і повертає їхнє середнє значення.
+//Додати перевірку, що аргументи це числа.
+
+function caclculateAverage() {
+  let sumNamber = 0;
+  let totalNam = 0;
+  for (const i of arguments) {
+    if (typeof i === "number") {
+      sumNamber += i;
+      totalNam += 1;
     }
-    return min;
+  }
+  return sumNamber / totalNam;
 }
-console.log(findSmallerNumber([12, 5, 35, 56, 3, 24, 7, 80, 12]))
+console.log(caclculateAverage(1, 2, 3, "5", 10));
