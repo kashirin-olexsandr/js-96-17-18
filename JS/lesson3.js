@@ -191,3 +191,52 @@ console.log(client.email);
 client.email = "newUser@gmail.com"
 
 console.log(client.email);
+
+/* / Напиши класс Notes который управляет коллекцией заметок в
+//свойстве items.
+//Заметка это объект со свойствами id, text і priority
+//Добавь классу статический метод Priopity,
+//в котором будет храниться объект с приоритетами.
+//Добавь методы addNote(note), removeNote(id)
+//updatePriority(text, newPriority) */
+
+class Notes {
+  static Priority (){
+    return {
+      HIGHT: "hight",
+      LOW: "low",
+    }
+  }
+
+  conctructor(note, id){
+    this.items = [];
+  } 
+
+  addNote(note){
+    this.items.push(note);
+  }
+
+  removeNote(id){
+   const index = this.items.findIndex((item) => item.id === id);
+   if (index !== -1) {
+    this.items.splice(index, 1)
+   }
+  }
+  updatePriority(id, newPriority){
+   const newIndex  = this.items.findIndex((item)=>item.id ===id);
+    if(index !== -1) {
+      this.items[newIndex].priority = newPriority;
+    }  
+  }
+
+};
+
+const note1 = new Notes();
+console.log(note1);
+/*note1.addNote({ text: "Note1", id : 1, priority: Notes.Priority().LOW });*/
+note1.addNote({ text: "Note2", id : 2, priority: Notes.Priority().LOW });
+note1.addNote({ text: "Note3", id : 3, priority: Notes.Priority().LOW });
+console.log(note1.items);
+note1.updatePriority( id = 1, Notes.Priority().HIGHT );
+
+
