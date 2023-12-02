@@ -5,16 +5,41 @@
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
 */
 
-const swapBtn = document.querySelector("#swapButton");
-const leftSwapInput = document.querySelector("#leftSwapInput");
-const rightSwapInput = document.querySelector("#rightSwapInput");
+// const swapBtn = document.querySelector("#swapButton");
+// const leftSwapInput = document.querySelector("#leftSwapInput");
+// const rightSwapInput = document.querySelector("#rightSwapInput");
 
-function handleSwap() {
-  const valueLeft = leftSwapInput.value;
-  const valueRight = rightSwapInput.value;
+// function handleSwap() {
+//   const valueLeft = leftSwapInput.value;
+//   const valueRight = rightSwapInput.value;
 
-  leftSwapInput.value = valueRight;
-  rightSwapInput.value = valueLeft;
+//   leftSwapInput.value = valueRight;
+//   rightSwapInput.value = valueLeft;
+// }
+
+// swapBtn.addEventListener("click", handleSwap);
+
+
+
+/*
+Завдання 3
+Кнопка "Приховати" ховає текст і замінює назву кнопки на
+"Розкрити", при повторному натисканні текст знову стає доступним
+і кнопка набуває початкового вигляду.
+*/
+
+
+const passwordInput = document.getElementById("passwordInput");
+const passwordButton = document.getElementById("passwordButton");
+
+function changeButtonText() {
+  if (passwordInput.type === "text") {
+    passwordInput.type = "password";
+    passwordButton.textContent = "Розкрити";
+  } else {
+    passwordInput.type = "text";
+    passwordButton.textContent = "Приховати";
+  }
 }
 
-swapBtn.addEventListener("click", handleSwap);
+passwordButton.addEventListener("click", changeButtonText);
