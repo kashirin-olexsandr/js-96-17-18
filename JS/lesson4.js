@@ -83,3 +83,17 @@ function handlerMouseMove(event) {
 };
 
 outerCircleLink.addEventListener("click", handelClickOnCircle);
+/*
+<!-- ЗАДАЧА 13 -->
+    <!-- <p class="taskTitle">ЗАДАЧА 13</p>
+    <ul class="grid">
+      <li class="gridItem"></li>
+      <li class="gridItem"></li>
+      <li class="gridItem"></li>
+      <li class="gridItem"></li>
+      <li class="gridItem"></li>
+      <li class="gridItem"></li>
+      <li class="gridItem"></li>
+      <li class="gridItem"></li>
+      <li class="gridItem"></li>
+    </ul> -->
