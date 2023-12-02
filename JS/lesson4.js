@@ -42,4 +42,44 @@ function changeButtonText() {
   }
 }
 
-passwordButton.addEventListener("click", changeButtonText);
+/*passwordButton.addEventListener("click", changeButtonText);*/
+
+
+/*
+Завдання 7
+При натисканні на коло він повинен слідувати за курсором.
+При повторному натисканні він стає в початкове положення.
+https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/MouseEvent
+https://developer.mozilla.org/ru/docs/Web/API/MouseEvent/pageX
+https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY
+<div>
+      <p class="taskTitle">ЗАДАЧА 7</p>
+      <div class="outerCircle">
+        <div class="innerCircle"></div>
+      </div>
+    </div>
+*/
+
+const outerCircleLink = document.querySelector(".outerCircle");
+
+function handelClickOnCircle(event) {
+  console.log(event);
+  const circle = event.currentTarget;
+  if(circle.style.position === "absolute") {
+    window.removeEventListener("mousemove", handlerMouseMove);
+    circle.style.position = "static";
+    return 
+  } 
+  window.addEventListener("mousemove", handlerMouseMove);
+  circle.style.position = "absolute";
+};
+
+function handlerMouseMove(event) {
+ /* console.log(event.pageX);*/
+ 
+  outerCircleLink.style.top = `${event.pageY - 20}px`;
+  outerCircleLink.style.left = `${event.pageX - 20}px`;
+
+};
+
+outerCircleLink.addEventListener("click", handelClickOnCircle);
